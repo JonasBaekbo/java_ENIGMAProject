@@ -10,12 +10,12 @@ public class prototype {
         System.out.println("Hej og velkommen til!");
         System.out.println("Vil du gerne \033[1mE\033[0mncode eller \033[1mD\033[0mecode");
         if (userInput.nextLine().charAt(0) == 'e'){
-            System.out.println("Du har valgt at Encode en tekst! \nSkriv venligst noget tekst i store bogstaver som jeg kan encode for dig");
+            System.out.println("Du har valgt at encode en tekst! \nSkriv venligst noget tekst i store bogstaver som jeg kan encode for dig");
             String text = fromLettersToNumbers(userInput.nextLine());
             System.out.printf("Jeg har encoded din tekst til følgende:\n%s", text);
 
         }else{
-            System.out.println("Du har valgt at Encode en tekst! \nSkriv venligst nogle tal, adskilt af et komma (mellemrum som 0) som jeg kan decode for dig\nEksempel: 2,3,4,1,0,2,5");
+            System.out.println("Du har valgt at decode en tekst! \nSkriv venligst nogle tal, adskilt af et komma (mellemrum som 0) som jeg kan decode for dig\nEksempel: 2,3,4,1,0,2,5");
             String text = userInput.nextLine();
             System.out.printf("Jeg har decoded din tekst til følgende tekst:\n%s", fromNumbersToLetters(text));
 
