@@ -27,8 +27,8 @@ public class prototype {
     }
 
     public static String fromLettersToNumbers(String word) {
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ"; // Hænger sammen med linje -- - se kommentar
-        int[] letternumber = new int [word.length()]; // Hænger sammen med linje 19 og 34 se kommentar
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ"; // Hænger sammen med linje 36 - se kommentar
+        int[] letternumber = new int [word.length()]; // Hænger sammen med linje 30 og 36 se kommentar
         for(int i =0; i<word.length(); i++){
             if(word.charAt(i) == ' '){
                 letternumber[i] =  0;
@@ -40,21 +40,21 @@ public class prototype {
         return Arrays.toString(letternumber);
     }
     public static String fromNumbersToLetters(String numbers) {
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ"; // Hænger sammen med linje 34 - se kommentar
-        String[] tokens = numbers.split(",");
-        int[] numbersForLetter = new int[tokens.length];
-        char[] letterForNumber = new char[tokens.length];
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ"; // Hænger sammen med linje 30 - se kommentar
+        String[] tokens = numbers.split(","); // Hænger sammen med linje 47
+        int[] numbersForLetter = new int[tokens.length]; // Hænger sammen med linje 47
+        char[] letterForNumber = new char[tokens.length]; // Hænger sammen med linje 47
         StringBuilder text = new StringBuilder(); // Fundet på nettet - https://www.baeldung.com/java-array-to-string
         for (int i = 0; i < tokens.length; i++) {
             numbersForLetter[i] = Integer.parseInt(tokens[i]);
             if (numbersForLetter[i] == 0){
                 letterForNumber[i] = ' ';
-                text.append(letterForNumber[i]); // Hænger sammen med linje 46
+                text.append(letterForNumber[i]); // Hænger sammen med linje 47
             }else{
                 letterForNumber[i] = alphabet.charAt(numbersForLetter[i]-1);
-                text.append(letterForNumber[i]); // Hænger sammen med linje 46
+                text.append(letterForNumber[i]); // Hænger sammen med linje 47
             }
         }
-        return text.toString(); // Hænger sammen med linje 46
+        return text.toString(); // Hænger sammen med linje 47
     }
 }
