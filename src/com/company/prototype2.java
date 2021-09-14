@@ -1,11 +1,10 @@
 package com.company;
 
-import java.util.Arrays;
 
 public class prototype2 {
     public static void main(String[] args) {
-        int cipher[] = {1,2,5};
-        String plainText = numbersListtoText(cipher);
+        int[] cipher = {1,2,5};
+        String plainText = numbersListToText(cipher);
         System.out.println(plainText);
 
         /*
@@ -25,26 +24,21 @@ public class prototype2 {
     }
     public static int letterToNumber(char letter){
         String theAlphabet = " ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ";
-        int number = theAlphabet.indexOf(letter);
 
-        return number;
+        return theAlphabet.indexOf(letter);
     }
 
 
     public static char numberToLetter(int number){
         String theAlphabet = " ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ";
-        char letter = theAlphabet.charAt(number);
-        return letter;
+        return theAlphabet.charAt(number);
     }
-
-    public static String numbersListtoText(int[] numbers){
-        String text = "";
-        for (int i=0; i<numbers.length; i++){
-            int number = numbers[i];
-
+    public static String numbersListToText(int[] numbers){
+        StringBuilder text = new StringBuilder();
+        for (int number : numbers) {
             char letter = numberToLetter(number);
-            text = text + letter;
+            text.append(letter);
         }
-        return text;
+        return text.toString();
     }
 }
