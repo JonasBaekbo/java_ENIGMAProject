@@ -27,14 +27,10 @@ public class prototype {
     }
 
     public static String fromLettersToNumbers(String word) {
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ"; // Hænger sammen med linje 36 - se kommentar
+        String alphabet = " ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ"; // Hænger sammen med linje 36 - se kommentar
         int[] letternumber = new int [word.length()]; // Hænger sammen med linje 30 og 36 se kommentar
         for(int i =0; i<word.length(); i++){
-            if(word.charAt(i) == ' '){
-                letternumber[i] =  0;
-            }else{
-                letternumber[i] =  alphabet.indexOf(word.charAt(i)+1); // Fundet på nettet - https://stackoverflow.com/questions/8879714/how-to-get-numeric-position-of-alphabets-in-java
-            }
+                letternumber[i] =  alphabet.indexOf(word.charAt(i)); // Fundet på nettet - https://stackoverflow.com/questions/8879714/how-to-get-numeric-position-of-alphabets-in-java
 
         }
         return Arrays.toString(letternumber);
