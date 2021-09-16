@@ -87,7 +87,7 @@ public class Main {
         System.out.println("Skriv venligst nogle tegn med store bogstaver:");
         String plainText = userInput.nextLine();
         int[] cipherText = textToListOfNumbers(plainText);
-        System.out.printf("Dine krypterede talrække er: %s", Arrays.toString(cipherText));
+        System.out.printf("Dine krypterede talrække er: %s\n", Arrays.toString(cipherText));
 
     }
 
@@ -103,15 +103,15 @@ public class Main {
     public static void decryptCaesarMenu() {
         Scanner userInput = new Scanner(System.in);
         // beder brugeren om ciphertext
-        System.out.println("Skriv venligst en tekst med store bogstaver som vil blive krypteret:");
+        System.out.println("Skriv venligst en tekst med store bogstaver som vil blive dekrypteret:");
         String cipherText = userInput.nextLine();
         // beder brugeren om shift-værdi
         System.out.println("Skriv nu venligst en shift værdi:");
         int shift = userInput.nextInt();
         // kalder caesarDecrypt med ciphertext og shift-værdi
-        String plainText = caesarEncrypt(cipherText, shift);
+        String plainText = caesarDecrypt(cipherText, shift);
         // udskriver plaintext modtaget fra ovenstående
-        System.out.printf("Din krypterede tekst er: %s", plainText);
+        System.out.printf("Din krypterede tekst er: %s\n", plainText);
     }
 
     public static void encryptCaesarMenu() {
@@ -126,7 +126,7 @@ public class Main {
         // kalder caesarEncrypt med ciphertext og shift-værdi
         String cipherText = caesarEncrypt(plainText, shift);
         // udskriver ciphertext modtaget fra ovenstående
-        System.out.printf("Din krypterede tekst er: %s", cipherText);
+        System.out.printf("Din krypterede tekst er: %s\n", cipherText);
     }
 
     public static String caesarEncrypt( String plainText, int shift ) {
@@ -141,9 +141,12 @@ public class Main {
 
     public static String caesarDecrypt( String ciphertext, int shift ) {
         // textToListOfNumbers
+        int[] numbers = textToListOfNumbers(ciphertext);
         // shiftListOfNumbers
+        numbers = shiftListOfNumbers(numbers, -shift);
         // listOfNumbersToText
-        return "";
+        String plainText = listOfNumbersToText(numbers);
+        return plainText;
     }
 
     public static int[] shiftListOfNumbers( int[] numbers, int shift ) {
